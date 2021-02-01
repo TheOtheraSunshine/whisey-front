@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>
+    <b>Unos pretplate</b>
+</h1>
+<div class = data>
+    <mat-dialog-content>
+        <b>Datum početka pretplate: </b> {{ subscriptionDto.from }}
+        <br>
+        <b>Datum isteka pretplate: </b> {{ subscriptionDto.to }}
+        <br>
+        <b>Datum uplate: </b> {{ subscriptionDto.paidDate }}
+        <br>
+    </mat-dialog-content>
+</div>
+<div *ngIf="!subscriptionDto.from">
+    <mat-form-field class="datepicker">
+        <mat-label>Datum početka pretplate</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]='from'>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
+<div>
+    <mat-checkbox class="is-paid-checkbox" [(ngModel)]="isDisabled" [checked]="isDisabled == true">Plaćeno</mat-checkbox>
+</div>
+<div>
+    <mat-form-field class="datepicker">
+        <mat-label>Datum uplate</mat-label>
+        <input [disabled]="!isDisabled" required matInput [matDatepicker]="picker1" [(ngModel)]='paidDate'>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onConfirm()">Izmjeni</button>
+    <button mat-button (click)="onDismiss()">Odustani</button>
+    <button mat-raised-button class="reset" color="primary" (click)="reset(subscriptionDto)">Reset</button>
+</div>

@@ -1,0 +1,17 @@
+.student-card {
+    width: 50%;
+    margin: 130px ;
+}
+
+.student-card-title {
+    margin-left: 20%;
+}
+
+.add-button {
+    margin-left: 32%;
+}
+
+.mat-raised-button {
+    background-color: #bfde62;
+    color: black;
+}

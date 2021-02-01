@@ -1,0 +1,67 @@
+<div class="volunteer-card">
+    <mat-card>
+        <mat-card-title class="volunteer-card-title">
+        Novi volonter
+        </mat-card-title>
+        <mat-card-content>
+            <div>
+                <mat-form-field class="last-name-input">
+                    <mat-label>Prezime</mat-label>
+                    <input matInput required type="text" [(ngModel)]="volunteerDto.lastName">
+                    <button mat-button *ngIf="volunteerDto.lastName" matSuffix mat-icon-button aria-label="Clear" (click)="volunteerDto.lastName=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="first-name-input">
+                    <mat-label>Ime</mat-label>
+                    <input matInput required type="text" [(ngModel)]="volunteerDto.firstName">
+                    <button mat-button *ngIf="volunteerDto.firstName" matSuffix mat-icon-button aria-label="Clear" (click)="volunteerDto.firstName=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                </div>
+            <div>
+                <mat-form-field class="email-input">
+                    <mat-label>Email</mat-label>
+                    <input matInput required type="text" [(ngModel)]="volunteerDto.email">
+                    <button mat-button *ngIf="volunteerDto.email" matSuffix mat-icon-button aria-label="Clear" (click)="volunteerDto.email=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="contact-input">
+                    <mat-label>Kontakt</mat-label>
+                    <input matInput required type="text" [(ngModel)]="volunteerDto.contact">
+                    <button mat-button *ngIf="volunteerDto.contact" matSuffix mat-icon-button aria-label="Clear" (click)="volunteerDto.contact=''">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="add-button">
+                <button mat-raised-button [disabled]="!volunteerDto.lastName 
+                || !volunteerDto.firstName
+                || !volunteerDto.email
+                || !volunteerDto.contact" (click)="addVolunteer()" color="primary">Dodaj volontera</button>
+            </div>
+            <div class="approve-volunteer">
+            <div class="volunteer-dropdown">
+                <mat-form-field class="volunteer-dropdown">
+                    <mat-label>Odobri volontera</mat-label>
+                    <mat-select required [(ngModel)]="selectedVolunteer" name="volunteer">
+                        <mat-option *ngFor="let volunteer of volunteers" [value]="volunteer">
+                            {{volunteer.firstName}}  {{volunteer.lastName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="approve-decline-button">
+                <button mat-raised-button (click)="approve()" color="primary">Odobri</button>
+                <button mat-raised-button class="decline-button" (click)="decline()" color="primary">Odbij</button>
+            </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    </div>

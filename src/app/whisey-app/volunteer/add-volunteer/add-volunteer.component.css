@@ -1,0 +1,27 @@
+.volunteer-card {
+    width: 50%;
+    margin: 130px ;
+}
+
+.volunteer-card-title {
+    margin-left: 20%;
+}
+
+.add-button {
+    margin-left: 32%;
+    color: #bfde62;
+}
+
+.mat-raised-button {
+    background-color: #bfde62;
+    color: black;
+}
+
+.decline-button {
+    margin-left: 20%;
+    background-color: #f75e5e;
+}
+
+.approve-volunteer {
+    margin-top: 10%;
+}

@@ -1,0 +1,113 @@
+/* .container{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container img {
+    height: 720px;
+    width: 1536px;
+  }
+
+.container .btn {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .container .login {
+    display:inline-block;
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    background-color: #f3d8c0;
+    border-radius: 50px;
+    height: 200px;
+    width: 400px;
+  }
+  
+  .container .btn:hover {
+    background-color: black;
+  }
+
+.container .username {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 60%;
+    background-color: #ffefe1;
+}
+
+.container .password {
+    position: absolute;
+    top: 32%;
+    left: 20%;
+    width: 60%;
+    background-color: #ffefe1;
+} */
+
+.login-page {
+  background-image: url(/assets/images/login-pic.jpg);
+  image-resolution: inherit;
+}
+
+.mat-card{
+  margin-right: 55%;
+  margin-top: 6%;
+  background-color: #fcca6d;
+}
+
+.login-page {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #303F9F;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+mat-card {
+  width: 30%;
+  margin: 10% auto;
+  border-radius: 8px;
+}
+mat-form-field, mat-checkbox {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+mat-card-content {
+  margin-top: 20px;
+}
+
+.login-button {
+  margin-top: 20px;
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.register-button {
+  margin-top: 20px;
+  display: block;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.mat-raised-button {
+  background-color: #0782db;
+}

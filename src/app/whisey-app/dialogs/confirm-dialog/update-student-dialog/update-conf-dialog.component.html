@@ -1,0 +1,63 @@
+<h1 mat-dialog-title>
+    <b>Izmjeni podatke o učeniku</b>
+</h1>
+<div mat-dialog-content>
+    <div>
+        <mat-form-field class="last-name-input">
+            <mat-label>Prezime</mat-label>
+            <input matInput type="text" [(ngModel)]="studentDto.lastName">
+            <button mat-button *ngIf="studentDto.lastName" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.lastName=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="first-name-input">
+            <mat-label>Ime</mat-label>
+            <input matInput type="text" [(ngModel)]="studentDto.firstName">
+            <button mat-button *ngIf="studentDto.firstName" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.firstName=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        </div>
+    <div>
+        <mat-form-field class="contact-input">
+            <mat-label>Kontakt</mat-label>
+            <input matInput type="text" [(ngModel)]="studentDto.contact">
+            <button mat-button *ngIf="studentDto.contact" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.contact=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="grade-input">
+            <mat-label>Razred</mat-label>
+            <input matInput type="number" [(ngModel)]="studentDto.grade">
+            <button mat-button *ngIf="studentDto.grade" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.grade=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="school-input">
+            <mat-label>Škola</mat-label>
+            <input matInput type="text" [(ngModel)]="studentDto.school">
+            <button mat-button *ngIf="studentDto.school" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.school=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="age-input">
+            <mat-label>Godine</mat-label>
+            <input matInput type="number" [(ngModel)]="studentDto.age">
+            <button mat-button *ngIf="studentDto.age" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.age=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onConfirm()">Izmjeni</button>
+    <button mat-button (click)="onDismiss()">Odustani</button>
+</div>

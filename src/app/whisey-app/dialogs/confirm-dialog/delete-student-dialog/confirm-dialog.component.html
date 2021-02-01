@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>
+    <b>Brisanje {{ data }}</b>
+  </h1>
+  
+  <div mat-dialog-content>
+    <p>Želite li obrisati {{ data }}?</p>
+  </div>
+  
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onConfirm()">Da</button>
+    <button mat-button (click)="onDismiss()">Ne</button>
+  </div>

@@ -1,0 +1,104 @@
+<div class="login-page">
+  <mat-card class="mat-elevation-z12">
+    <!-- <mat-card-title style="text-align:center;">SignIn/SignUp</mat-card-title> -->
+    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+      <mat-tab label="Prijava">
+          <mat-card-content>
+            <form action="">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Korisničko ime"
+                  required
+                  name="username"
+                  [(ngModel)]="user.username">
+                  <mat-icon matSuffix>perm_identity</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Lozinka"
+                  type="password"
+                  required
+                  name="password"
+                  [(ngModel)]="user.password">
+                <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+              <button
+                mat-raised-button
+                color="primary"
+                class="login-button"
+                (click)="login()">
+                Prijava
+              </button>
+            </form>
+          </mat-card-content>
+      </mat-tab>
+      <mat-tab label="Registracija">
+        <mat-card-content>
+          <form action="">
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Korisničko ime"
+                required
+                name="username"
+                [(ngModel)]="volunteer.username">
+              <mat-icon matSuffix>perm_identity</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Email"
+                required
+                name="email"
+                [(ngModel)]="volunteer.email">
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Lozinka"
+                type="password"
+                required
+                name="password"
+                [(ngModel)]="volunteer.password">
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Ime"
+                required
+                name="firstName"
+                [(ngModel)]="volunteer.firstName">
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Prezime"
+                required
+                name="lastName"
+                [(ngModel)]="volunteer.lastName">
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Kontakt"
+                required
+                name="contact"
+                [(ngModel)]="volunteer.contact">
+            </mat-form-field>
+            <button
+              mat-raised-button
+              color="primary"
+              class="register-button"
+              (click)="register()">
+              Potvrdi
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

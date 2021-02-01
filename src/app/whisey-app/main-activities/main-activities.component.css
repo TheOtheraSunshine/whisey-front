@@ -1,0 +1,84 @@
+.activities-table {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.mat-row:hover {
+    background-color: #e1e2e3;
+}
+
+.search-div {
+    margin-left: 5%;
+}
+
+.search-form-field {
+    width: 30%;
+    margin-left: 64.7%;
+}
+
+.input-div {
+    margin-left: 5%;
+    width: 90%;
+}
+
+.add-button-div {
+    padding: 10px;
+}
+
+.mat-raised-button {
+    width: 150px;
+}
+
+.mat-column-reservedHours {
+    flex: 0.1 10 6% !important;
+}
+
+.mat-column-delete {
+    flex: 0.1 10 3% !important;
+}
+
+#wrapper {
+    display: flex;
+}
+
+.hours-input {
+    margin-left: 15px;
+}
+
+.student-dropdown {
+    margin-left: 15px;
+}
+
+.subject-dropdown {
+    margin-left: 15px;
+}
+
+.volunteer-dropdown .mat-form-field{
+    width: 112%;
+}
+
+.select-time-from {
+    margin-left: 50px;
+}
+
+.select-time-to {
+    margin-left: 33px;
+}
+
+.appointment-date {
+    margin-left: 1%;
+}
+
+.volunteer-dropdown {
+    margin-left: 1%;
+}
+
+.mat-icon {
+    color: #808080;
+}
+
+.mat-raised-button {
+    background-color: #bfde62;
+    color: black;
+}

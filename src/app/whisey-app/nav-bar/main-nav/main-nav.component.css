@@ -1,0 +1,85 @@
+.sidenav-container {
+  display: flex;
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+  background-color: #fcca6d;
+}
+
+.mat-sidenav-content {
+  width: 100%;
+  /* background-image: url(/assets/images/slika.jpg); */
+  /* background-color: royalblue; */
+}
+
+.logout-button {
+  display: flex;
+  margin-left: 87%;
+}
+
+.logut-h1 {
+  margin-top: 4px;
+  font-size: 76%;
+  margin-right: 5px;
+}
+
+.mat-toolbar {
+  background-color: #e6af49;
+}
+
+.img-mudrica {
+  width: 60%;
+  margin-left: 10%;
+  margin-bottom: 2%;
+}
+
+.img-light-bulb {
+  width: 30%;
+  margin-left: 30%;
+}
+
+.right-toolbar {
+  background-color: #e6af49;
+}
+
+.info-card {
+  width: 90%;
+  margin-left: 5%;
+  background-color: #e6af49;
+  padding: 0.4em;
+}
+
+.info {
+  font-size: 11px;
+  position: relative;
+}
+
+.mat-icon {
+  font-size: 20px;
+  float: left;
+}
+
+.info-div {
+  color: #454545;
+  margin: 0em;
+}
+
+.facebook {
+  margin-top: 12px;
+  margin-left: 4%;
+  float: left;
+}
+
+.web {
+  margin-top: 12px;
+  margin-right: 68%;
+  float: right;
+}
+
+.calendar-wrapper {
+  margin: 0em;
+  padding: 0em;
+}

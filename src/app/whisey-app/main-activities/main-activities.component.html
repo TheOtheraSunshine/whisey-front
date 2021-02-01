@@ -1,0 +1,134 @@
+<div class="main-div">
+    <div class="search-div">
+        <mat-form-field class="search-form-field">
+            <input matInput [(ngModel)]="searchKey" placeholder="Pretraži" autocomplete="off" (keyup)="applyFilter()">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div class="mat-elevation-z8 input-div">
+        <div id="wrapper">
+        <div class="appointment-date">
+            <mat-form-field class="datepicker">
+                <mat-label>Datum termina</mat-label>
+                <input required matInput [matDatepicker]="picker" [(ngModel)]='appointmentDate'>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="hours-input">
+        <mat-form-field class="hours-input">
+            <mat-label>Sati</mat-label>
+            <input required matInput type="number" [(ngModel)]="hours">
+            <button mat-button *ngIf="hours" matSuffix mat-icon-button aria-label="Clear" (click)="hours=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        </div>
+        <div class="student-dropdown">
+            <mat-form-field class="student-dropdown">
+                <mat-label>Učenik</mat-label>
+                <mat-select required [(ngModel)]="selectedStudent" name="student">
+                    <mat-option *ngFor="let student of students" [value]="student">
+                        {{student.lastName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="subject-dropdown">
+        <mat-form-field class="subject-dropdown">
+            <mat-label>Predmet</mat-label>
+            <mat-select required [(ngModel)]="selectedSubject" name="subject">
+                <mat-option *ngFor="let subject of subjects" [value]="subject">
+                    {{subject.subjectName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+        </div>
+        <div id="wrapper">
+        <div class="volunteer-dropdown">
+        <mat-form-field class="volunteer-dropdown">
+            <mat-label>Volonter</mat-label>
+            <mat-select required [(ngModel)]="selectedVolunteer" name="volunteer">
+                <mat-option *ngFor="let volunteer of volunteers" [value]="volunteer">
+                    {{volunteer.firstName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+        <div class="select-time-from">
+            <mat-form-field>
+                <input required matInput [(ngModel)]="selectedTimeFrom" type="time" class="bg-none" placeholder="Od">
+            </mat-form-field>
+        </div>
+        <div class = "select-time-to">
+            <mat-form-field>
+                <input required matInput [(ngModel)]="selectedTimeTo" type="time" class="bg-none" placeholder="Do">
+            </mat-form-field>
+        </div>
+        </div>
+        <div class="add-button-div">
+            <button mat-raised-button [disabled]="!appointmentDate 
+            || !hours
+            || !selectedStudent
+            || !selectedSubject
+            || !selectedVolunteer
+            || !selectedTimeFrom
+            || !selectedTimeTo" (click)="addActivity()" color="primary">Dodaj termin</button>
+        </div>
+    </div>
+    <div class="mat-elevation-z8 activities-table">
+    <mat-table #table [dataSource]="dataSource" matSort aria-label="Activities">
+    
+        <ng-container matColumnDef="appointmentDate">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Datum termina </mat-header-cell>
+            <mat-cell *matCellDef="let activitiesDto"> {{activitiesDto.appointmentDate}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="timeFrom">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Od </mat-header-cell>
+            <mat-cell *matCellDef="let activitiesDto"> {{activitiesDto.timeFrom}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="timeTo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Do </mat-header-cell>
+            <mat-cell *matCellDef="let activitiesDto"> {{activitiesDto.timeTo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="studentInfo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Učenik </mat-header-cell>
+            <mat-cell *matCellDef="let activitiesDto"> {{activitiesDto.studentInfo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="reservedHours">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Sati </mat-header-cell>
+            <mat-cell *matCellDef="let activitiesDto"> {{activitiesDto.reservedHours}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="subject">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Predmet </mat-header-cell>
+            <mat-cell *matCellDef="let activitiesDto"> {{activitiesDto.subjectName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="volunteerInfo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Volonter </mat-header-cell>
+            <mat-cell *matCellDef="let activitiesDto"> {{activitiesDto.volunteerInfo}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+            <mat-cell *matCellDef="let activitiesDto"> 
+                <button mat-icon-button color="primary" (click)="openConfirmDialogDelete(activitiesDto)" aria-label="Delete button">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]"></mat-paginator>
+    </div>
+</div>

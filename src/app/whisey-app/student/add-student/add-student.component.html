@@ -1,0 +1,71 @@
+<div class="student-card">
+<mat-card>
+    <mat-card-title class="student-card-title">
+    Novi učenik
+    </mat-card-title>
+    <mat-card-content>
+        <div>
+            <mat-form-field class="last-name-input">
+                <mat-label>Prezime</mat-label>
+                <input matInput required type="text" [(ngModel)]="studentDto.lastName">
+                <button mat-button *ngIf="studentDto.lastName" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.lastName=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="first-name-input">
+                <mat-label>Ime</mat-label>
+                <input matInput required type="text" [(ngModel)]="studentDto.firstName">
+                <button mat-button *ngIf="studentDto.firstName" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.firstName=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            </div>
+        <div>
+            <mat-form-field class="contact-input">
+                <mat-label>Kontakt</mat-label>
+                <input matInput required type="text" [(ngModel)]="studentDto.contact">
+                <button mat-button *ngIf="studentDto.contact" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.contact=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="grade-input">
+                <mat-label>Razred</mat-label>
+                <input matInput required type="number" [(ngModel)]="studentDto.grade">
+                <button mat-button *ngIf="studentDto.grade" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.grade=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="school-input">
+                <mat-label>Škola</mat-label>
+                <input matInput required type="text" [(ngModel)]="studentDto.school">
+                <button mat-button *ngIf="studentDto.school" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.school=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="age-input">
+                <mat-label>Godine</mat-label>
+                <input matInput required type="number" [(ngModel)]="studentDto.age">
+                <button mat-button *ngIf="studentDto.age" matSuffix mat-icon-button aria-label="Clear" (click)="studentDto.age=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="add-button">
+            <button mat-raised-button [disabled]="!studentDto.lastName 
+            || !studentDto.firstName
+            || !studentDto.contact
+            || !studentDto.grade
+            || !studentDto.school
+            || !studentDto.age" (click)="addStudent()" color="primary">Dodaj učenika</button>
+        </div>
+    </mat-card-content>
+</mat-card>
+</div>

@@ -1,0 +1,45 @@
+<h1 mat-dialog-title>
+    <b>Izmjeni podatke o volonteru</b>
+</h1>
+<div mat-dialog-content>
+    <div>
+        <mat-form-field class="last-name-input">
+            <mat-label>Prezime</mat-label>
+            <input matInput type="text" [(ngModel)]="volunteerUpdateDto.lastName">
+            <button mat-button *ngIf="volunteerUpdateDto.lastName" matSuffix mat-icon-button aria-label="Clear" (click)="volunteerUpdateDto.lastName=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="first-name-input">
+            <mat-label>Ime</mat-label>
+            <input matInput type="text" [(ngModel)]="volunteerUpdateDto.firstName">
+            <button mat-button *ngIf="volunteerUpdateDto.firstName" matSuffix mat-icon-button aria-label="Clear" (click)="volunteerUpdateDto.firstName=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        </div>
+    <div>
+        <mat-form-field class="contact-input">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" [(ngModel)]="volunteerUpdateDto.email">
+            <button mat-button *ngIf="volunteerUpdateDto.email" matSuffix mat-icon-button aria-label="Clear" (click)="volunteerUpdateDto.email=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="grade-input">
+            <mat-label>Kontakt</mat-label>
+            <input matInput type="text" [(ngModel)]="volunteerUpdateDto.contact">
+            <button mat-button *ngIf="volunteerUpdateDto.contact" matSuffix mat-icon-button aria-label="Clear" (click)="volunteerUpdateDto.contact=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onConfirm()">Izmjeni</button>
+    <button mat-button (click)="onDismiss()">Odustani</button>
+</div>

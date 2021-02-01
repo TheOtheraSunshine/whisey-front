@@ -1,0 +1,39 @@
+/* .mat-footer-row,
+.mat-header-row,
+.mat-row {
+    display: table;
+    min-width: 50%;
+} */
+
+.student-table {
+    width: 30%;
+    margin-left: 35%;
+}
+
+.mat-column-delete {
+    flex: 0.1 10 8% !important;
+}
+
+.mat-column-subscription {
+    flex: 0.1 10 8% !important;
+}
+
+.mat-column-info {
+    flex: 0.1 10 8% !important;
+}
+
+.mat-column-edit {
+    flex: 0.1 10 8% !important;
+}
+
+.mat-row:hover {
+    background-color: #e1e2e3;
+  }
+
+.main-div {
+    margin-top: 8.5%;
+}
+
+.mat-icon {
+    color: #808080;
+}

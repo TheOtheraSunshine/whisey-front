@@ -1,0 +1,60 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+  #drawer 
+  class="sidenav" 
+  fixedInViewport
+  [attr.role]="(isHandset$) ? 'dialog' : 'navigation'"
+  [mode]="(isHandset$ | async)!.matches ? 'over' : 'side'"
+  [opened]="!(isHandset$ | async)!.matches">
+    <mat-toolbar color="primary"><h1 class="menu-text">Izbornik</h1></mat-toolbar>
+    <mat-nav-list class="nav-list">
+      <a mat-list-item href="#" routerLink="/whisey-app">Termini</a>
+
+      <a mat-list-item routerLink="/whisey-app/students">Učenici</a>
+      <a mat-list-item *ngIf="isAuthenticated" href="#" routerLink="/whisey-app/volunteers">Volonteri</a>
+      <!-- <a mat-list-item href="#"><mat-icon matSuffix>calendar_today</mat-icon></a> -->
+      <a mat-list-item *ngIf="isAuthenticated" href="#" routerLink="/whisey-app/statistics">Statistika</a>
+      <div class="calendar-wrapper">
+        <mat-calendar #calendar class="calendar">
+        </mat-calendar>
+      </div>
+      <!-- <a mat-list-item href="https://www.facebook.com/Udruga-Mudrica-437170556361733/">Info</a> -->
+      <mat-card *ngIf="!isAuthenticated" class="info-card">
+        <div matTooltip="Pogledaj na karti" class="info-div"><mat-icon>location_on</mat-icon><a href="https://www.google.com/maps/place/Udruga+Mudrica/@45.797652,15.9075698,19z/data=!3m1!4b1!4m5!3m4!1s0x4765d1459de6fc6d:0x61056af9dd410f5a!8m2!3d45.797652!4d15.908117">
+          <h3 class="info">Šetalište 150. brigade 8</h3></a></div>
+        <div class="info-div"><mat-icon>mail</mat-icon><h3 class="info">udrugamudrica@gmail.com</h3></div>
+        <div class="info-div"><mat-icon>phone_iphone</mat-icon><h3 class="info">099 6745 285</h3></div>
+        <div class="info-div"><mat-icon>credit_card</mat-icon><h3 class="info">HR7924840081106268407</h3></div>
+      </mat-card>
+      <div *ngIf="!isAuthenticated" class="facebook">
+        <a href="https://www.facebook.com/Udruga-Mudrica-437170556361733/">
+          <mat-icon style="font-size: 30px;">facebook</mat-icon>
+        </a>
+      </div>
+      <div *ngIf="!isAuthenticated" class="web">
+        <a href="https://www.mudrica.hr/">
+          <mat-icon style="font-size: 30px;">public</mat-icon>
+        </a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="right-toolbar" color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- <span><img class ="img-mudrica" src="assets/images/mudrica_logo.png"></span> -->
+      <div class = "logout-button">
+        <h1 class="logut-h1">Odjava</h1>
+      <button type="button" mat-icon-button (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
+      </button>
+      </div>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
